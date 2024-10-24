@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, lazy,Suspense } from 'react'
 import {NavLink , Routes,Route} from 'react-router-dom'
 
 // import About from './About'
-import About from './About'
-import Home from './Home'
+// import Home from './Home'
+
+const About = lazy(()=> import('./About'))
+const Home = lazy(()=> import('./Home'))
 
 export default class Demo extends Component {
 
@@ -21,7 +23,7 @@ export default class Demo extends Component {
           <div className="col-xs-2 col-xs-offset-2">
             <div className="list-group">
               
-                <NavLink className='list-group-item' to='/about'>about</NavLink>
+                <NavLink className='list-group-item' to='/about'>About</NavLink>
                 <NavLink className='list-group-item' to='/home'>home</NavLink>
 
 
@@ -30,10 +32,13 @@ export default class Demo extends Component {
           <div className="col-xs-6">
             <div className="panel">
               <div className="panel-body">
-                <Routes>
-                  <Route path='/about' element={<About></About>}/>
-                  <Route path='/home' element={<Home></Home>}/>
-                </Routes>
+                <Suspense fallback={<h1>loading...</h1>}>
+                  <Routes>
+                    <Route path='/about' element={<About></About>}/>
+                    <Route path='/home' element={<Home></Home>}/>
+                  </Routes>
+                </Suspense>
+                
               </div>
             </div>
           </div>
