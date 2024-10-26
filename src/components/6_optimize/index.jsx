@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component, PureComponent } from 'react'
 import './index.css'
 
-export default class Parent extends Component {
+export default class Parent extends PureComponent {
 
   state = {
     carName:'BYD汉'
@@ -10,8 +10,17 @@ export default class Parent extends Component {
     this.setState({
       carName:'特斯拉'
     })
+    // this.setState({})
   }
+
+  // shouldComponentUpdate (event){
+  //   console.log(event)
+  //   // return false
+  //   return true
+  // }
+
   render() {
+    console.log('ppp-----')
     const {carName} = this.state
     return (
       <div className='parent'>
@@ -25,8 +34,9 @@ export default class Parent extends Component {
 }
 
 
-class Child extends Component {
+class Child extends PureComponent {
   render() {
+    console.log('ccc-----')
     return (
       <div className='child'>
         <h3>我是child组件</h3>
