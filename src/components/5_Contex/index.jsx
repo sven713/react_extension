@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component,  } from 'react'
 import './index.css'
 
 
 const MyContext = React.createContext()
-const {Provider} = MyContext
+const {Provider, Consumer} = MyContext
 
 
 export default class A extends Component {
@@ -42,17 +42,41 @@ class B extends Component {
   }
 }
 
-class C extends Component {
-  static contextType = MyContext
-  render() {
-    console.log('c--',this)
-    return (
-      <div className='grand'>
-        <h3>我是C组件</h3>
-        <h4>A组件给我的用户名是:{this.context.name}</h4>
-        <h4>!+A组件给我的年龄是:{this.context.age}</h4>
-      </div>
-    )
-  }
-}
+// class C extends Component {
+//   static contextType = MyContext
+//   render() {
+//     console.log('c--',this)
+//     return (
+//       <div className='grand'>
+//         <h3>我是C组件</h3>
+//         <h4>A组件给我的用户名是:{this.context.name}</h4>
+//         <h4>!+A组件给我的年龄是:{this.context.age}</h4>
+//       </div>
+//     )
+//   }
+// }
 
+function C(){
+
+
+
+  return (
+    <div className='grand'>
+      <h3>我是C组件</h3>
+      
+      <h4>A组件给我的用户名是:???
+
+        <Consumer>
+          {
+            value => {
+              console.log('vv---',value)
+              return `${value.name}, 年龄是:${value.age}`
+            }
+          }
+        </Consumer>
+
+      </h4>
+      <h4>A组件给我的年龄是:????</h4>
+    </div>
+  )
+}
