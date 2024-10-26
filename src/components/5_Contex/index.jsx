@@ -68,15 +68,7 @@ function C(){
 
         <Consumer>
           {
-            value => {
-              console.log('vv---',value)
-              // return `${value.name}, 年龄是:${value.age}`
-              return (
-              <span>
-                {value.name}
-                <h4>A组件给我的年龄是:{value.age}</h4>
-              </span>)
-            }
+            value => `${value.name}, 年龄是!!:${value.age}`
           }
         </Consumer>
 
