@@ -64,13 +64,18 @@ function C(){
     <div className='grand'>
       <h3>我是C组件</h3>
       
-      <h4>A组件给我的用户名是:???
+      <h4>A组件给我的用户名是:
 
         <Consumer>
           {
             value => {
               console.log('vv---',value)
-              return `${value.name}, 年龄是:${value.age}`
+              // return `${value.name}, 年龄是:${value.age}`
+              return (
+              <span>
+                {value.name}
+                <h4>A组件给我的年龄是:{value.age}</h4>
+              </span>)
             }
           }
         </Consumer>
