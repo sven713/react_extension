@@ -8,14 +8,17 @@ const {Provider} = MyContext
 
 export default class A extends Component {
   state={
-    name:'tom'
+    name:'tom',
+    age:'18'
   }
   render() {
+    const {name, age} = this.state
     return (
       <div className='parent'>
         <h3>我是A组件</h3>
         <h4>用户名是:{this.state.name}</h4>
-        <Provider value={this.state.name}>
+        {/* todo: 直接传state?  !!!可以*/}
+        <Provider value={{name, age}}>
           <B></B>
         </Provider>
       </div>
@@ -46,8 +49,10 @@ class C extends Component {
     return (
       <div className='grand'>
         <h3>我是C组件</h3>
-        <h4>A组件给我的用户名是:{this.context}</h4>
+        <h4>A组件给我的用户名是:{this.context.name}</h4>
+        <h4>!+A组件给我的年龄是:{this.context.age}</h4>
       </div>
     )
   }
 }
+
