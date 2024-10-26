@@ -50,6 +50,7 @@ function Demo (){
   const [count, setCount] = React.useState(0)
 
 
+  // 函数组件的生命周期函数: didMount + willUnMount
   React.useEffect(()=>{
     console.log('@')
     let timer = setInterval(() => {
