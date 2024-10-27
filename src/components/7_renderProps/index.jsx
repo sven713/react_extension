@@ -7,7 +7,7 @@ export default class Parent extends Component {
     return (
       <div className='parent'>
         <h3>Parent</h3>
-        <A render={(name)=> (<C/>)}>
+        <A render={(name)=> (<B name={name}></B> )}>
 
         </A>
       </div>
@@ -17,7 +17,7 @@ export default class Parent extends Component {
 
 class A extends Component {
   state={
-    name:'tom1'
+    name:'tom'
   }
   render() {
     console.log('aa-',this.props)
