@@ -6,7 +6,7 @@ export default class Parent extends Component {
     return (
       <div className='parent'>
         <h3>Parent</h3>
-        <A></A>
+        <A>hello</A>
       </div>
     )
   }
@@ -14,10 +14,12 @@ export default class Parent extends Component {
 
 class A extends Component {
   render() {
+    console.log('aa-',this.props)
     return (
       <div className='a'>
         <h3>我是A组件</h3>
-        <B></B>
+        {this.props.children}
+        {/* <B></B> */}
       </div>
     )
   }
