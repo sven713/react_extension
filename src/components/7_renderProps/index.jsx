@@ -6,7 +6,7 @@ export default class Parent extends Component {
   render() {
     return (
       <div className='parent'>
-        <h3>Parent</h3>
+        <h3>Parent </h3>
         <A render={(name)=> (<B name={name}></B> )}>
 
         </A>
