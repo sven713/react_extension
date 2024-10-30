@@ -2,24 +2,28 @@ import React, { Component } from 'react'
 
 export default class Child extends Component {
 
+  // state = {
+  //   children:[
+  //     {
+  //       id:'001',
+  //       name:'tom',
+  //       age:18
+  //     },
+  //     {
+  //       id:'002',
+  //       name:'jack',
+  //       age:20
+  //     },
+  //     {
+  //       id:'003',
+  //       name:'peiqi',
+  //       age:30
+  //     },
+  //   ]
+  // }
+
   state = {
-    children:[
-      {
-        id:'001',
-        name:'tom',
-        age:18
-      },
-      {
-        id:'002',
-        name:'jack',
-        age:20
-      },
-      {
-        id:'003',
-        name:'peiqi',
-        age:30
-      },
-    ]
+    children:''
   }
 
   render() {
