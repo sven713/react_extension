@@ -7,6 +7,7 @@ export default class Parent extends Component {
   }
 
   // 子组件报错,会调用,携带错误信息   state的值取决于Error, 用于捕获报错
+  // 注意!!只能捕获子组件,自身错误捕获不到, 只能捕获render, 不能捕获其他
   static getDerivedStateFromError(error){
     console.log('ee----',error)
     // this.setState({
