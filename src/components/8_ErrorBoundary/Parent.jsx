@@ -18,6 +18,11 @@ export default class Parent extends Component {
     }
   }
 
+  // 用于统计错误次数,发送服务器
+  componentDidCatch(){
+    console.log('出错了!!!!')
+  }
+
   render() {
     return (
       <div>
